@@ -142,7 +142,9 @@ function hasWon() {
   );
 
   // if all of the letters are shown on the screen
-  const areShown = allLetters.every((letter) => letter.textContent !== "");
+  const areShown = allLetters.every(
+    (letter, index) => letter.textContent === chosenWord[index].trim()
+  );
   if (areShown === true) {
     createMessageForResult("Congratulations! you have won the game");
   }
